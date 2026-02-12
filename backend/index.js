@@ -20,7 +20,10 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 app.use(cookieParser());
 const corsOptions = {
-    origin:'my-netflix-website.vercel.app',
+    origin: [
+        "http://localhost:3000",
+        "https://my-netflix-website.vercel.app"
+    ],
     credentials:true
 }
 app.use(cors(corsOptions));
